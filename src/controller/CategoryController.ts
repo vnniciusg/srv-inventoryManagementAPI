@@ -5,7 +5,7 @@ import { ICategory } from "../@types/ICategory";
 export class CategoryController {
   private categoryService = new CategoryService();
 
-  async getAll(req: Request, res: Response) {
+  async getAll(_, res: Response) {
     try {
       const categories: ICategory[] = await this.categoryService.findAll();
       return res.status(200).json({ type: "SUCCESS", data: categories });
